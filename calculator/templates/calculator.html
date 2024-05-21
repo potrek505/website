@@ -1,0 +1,25 @@
+{% extends 'master.html' %}
+
+{% block title %}Calculator{% endblock %}
+
+{% block content %}
+<div class="header">
+    <h1>Profit calculator</h1>
+</div>
+<form method="post">
+    {% csrf_token %}
+    <label for="pln">Capital in PLN:</label>
+    <input type="text" id="pln" name="PLN"><br><br>
+    <label for="deposit_fee">Deposit Fee:</label>
+    <input type="text" id="deposit_fee" name="deposit_fee"><br><br>
+    <label for="p2p_price">P2P Price:</label>
+    <input type="text" id="p2p_price" name="p2p_price"><br><br>
+    <button type="submit">Calculate</button>
+</form>
+
+{% if result %}
+    <div class="result">
+        <h3>{{ result }}</h3>
+    </div>
+{% endif %}
+{% endblock %}
