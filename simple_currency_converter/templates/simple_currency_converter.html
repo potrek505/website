@@ -1,0 +1,21 @@
+{% extends 'master.html' %}
+
+{% block title %}
+Currency Converter
+{% endblock %}
+
+{% block content %}
+<div class="header">
+    <h1>Currency Converter</h1>
+</div>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Convert</button>
+</form>
+
+{% if results %}
+    <h2>Converted Amounts:</h2>
+    {{ results | safe }}
+{% endif %}
+{% endblock %}

@@ -14,10 +14,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('', include('calculator.urls')),
+    path('calculator/', include('calculator.urls')),  # Prefiks dla aplikacji calculator
+    path('currency_converter/', include('simple_currency_converter.urls')),  # Prefiks dla aplikacji currency_converter
     path('admin/', admin.site.urls),
 ]
