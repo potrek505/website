@@ -8,14 +8,31 @@ Currency Converter
 <div class="header">
     <h1>Currency Converter</h1>
 </div>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Convert</button>
-</form>
-
-{% if results %}
-    <h2>Converted Amounts:</h2>
-    {{ results | safe }}
+<div class="form-and-results">
+    <form method="post">
+        {% csrf_token %}
+    
+        {{ form.amount.label }}
+        {{ form.amount }}
+        
+        {{ form.currencies.label }}
+        <div class="checkbox-multiple-columns">
+            {% for checkbox in form.currencies %}
+                <div>{{ checkbox }}</div>
+            {% endfor %}
+        </div>
+        <button type="submit">Convert</button>
+    </form>
+    
+    {% if results %}
+    <div class="result">
+        <h2>Converted Amounts:</h2>
+        <h3> {{ results | safe }}</h3>
+    </div>
+   
 {% endif %}
+</div>
+
+
+
 {% endblock %}

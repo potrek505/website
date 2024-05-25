@@ -37,9 +37,14 @@ CURRENCY_CHOICES = [
 ]
 
 class CurrencyConverterForm(forms.Form):
-    amount = forms.DecimalField(label='Amount in PLN', decimal_places=2)
+    amount = forms.DecimalField(
+        widget=forms.TextInput(attrs={'type': 'text'}),
+        decimal_places=2,
+        label='Amount in PLN:'
+        )
+    
     currencies = forms.MultipleChoiceField(
         choices=CURRENCY_CHOICES,
-        widget=forms.CheckboxSelectMultiple,
-        label='Select Currencies'
+        widget=forms.CheckboxSelectMultiple(),
+        label='Select Currencies:'
     )

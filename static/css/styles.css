@@ -1,5 +1,3 @@
-/* styles.css */
-
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
@@ -66,6 +64,12 @@ form input[type="text"] {
     color: #ffffff;
 }
 
+form input[type="checkbox"] {
+    margin: 10px;
+    accent-color: #0004ff75;
+}
+
+
 form button {
     background-color: #3a3a3a;
     color: #ffffff;
@@ -84,14 +88,6 @@ h2, h3 {
     color: #ffffff;
 }
 
-.result {
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 400px;
-    margin: auto;
-}
-
 footer {
     background-color: #1e1e1e;
     padding: 10px 0;
@@ -100,4 +96,30 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+.checkbox-multiple-columns {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.checkbox-multiple-columns div {
+    width: 50%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.form-and-results {
+    display: flex;
+    align-items: flex-start;
+}
+
+.result {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: auto;
 }

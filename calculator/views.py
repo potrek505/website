@@ -1,12 +1,10 @@
 from django.shortcuts import render
-
-# Create your views here.
 from django.http import HttpResponse
 from django.template import loader
 from .backend import profit
 
 def calculator(request):
-    result = None  # Inicjalizuj wynik jako None, aby obsłużyć GET i inne żądania
+    result = None
     if request.method == 'POST':
         try:
             capital_in_pln = float(request.POST.get('PLN', 0))
